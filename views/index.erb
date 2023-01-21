@@ -1,0 +1,22 @@
+<hgroup data-controller="hello">
+  <h1>Caption Capture</h1>
+  <h2>New language vocabulary from videos you love.</h2>
+</hgroup>
+
+<form action="/video" method="POST">
+  <div class="grid">
+    <label for="video_id">
+      Video ID
+      <input type="text" id="video_id" name="video_id" placeholder="e.g. 'NzEvCSt9IP8'" required />
+    </label>
+
+    <label for="language">
+      Language
+      <select name="language">
+        <option value="ru">Russian</option>
+      </select>
+    </label>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

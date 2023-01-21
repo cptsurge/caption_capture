@@ -1,0 +1,62 @@
+<hgroup>
+  <h1>Caption Capture</h1>
+  <h2>For video <a href="<%= @video_url %>"><%= @video_id %></a></h2>
+</hgroup>
+
+<blockquote data-controller="read-more">
+  <p class="captions" data-read-more-target="content"><%= @captions %></p>
+
+  <footer>
+    <cite><a href="#" type="button" data-action="read-more#toggle">Read more</a></cite>
+  </footer>
+</blockquote>
+
+<details>
+  <summary>
+    <hgroup>
+      <h2>By Frequency</h2>
+      <h3>Only showing words used at least 3 times</h3>
+    </hgroup>
+  </summary>
+
+  <table role="grid">
+    <thead>
+      <tr>
+        <td>Count</td>
+        <td>Russian</td>
+        <td>English</td>
+      </tr>
+    </thead>
+    <% @word_counts.each do |word, count| %>
+      <tr>
+        <td><%= count %></td>
+        <td><%= word %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </table>
+</details>
+
+<details>
+  <summary>
+    <hgroup>
+      <h2>Alphabetical Order</h2>
+      <h3>Showing all words</h3>
+    </hgroup>
+  </summary>
+
+  <table role="grid" data-read-more-target="content">
+    <thead>
+      <tr>
+        <td>Russian</td>
+        <td>English</td>
+      </tr>
+    </thead>
+    <% @words.uniq.each do |word| %>
+      <tr>
+        <td><%= word %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </table>
+</details>

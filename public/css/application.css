@@ -1,0 +1,19 @@
+.container {
+  max-width: 720px;
+}
+
+.captions {
+  margin-bottom: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--read-more-line-clamp, 4);
+}
+
+details summary {
+  line-height: unset;
+}
+
+details summary hgroup {
+  margin-bottom: 0;
+}
