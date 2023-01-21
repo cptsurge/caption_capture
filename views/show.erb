@@ -31,7 +31,7 @@
       <tr>
         <td><%= count %></td>
         <td><%= word %></td>
-        <td></td>
+        <td><%= @translations_map[word] %></td>
       </tr>
     <% end %>
   </table>
@@ -52,10 +52,10 @@
         <td>English</td>
       </tr>
     </thead>
-    <% @words.uniq.each do |word| %>
+    <% @translations_map.each do |original_word, translated_word| %>
       <tr>
-        <td><%= word %></td>
-        <td></td>
+        <td><%= original_word %></td>
+        <td><%= translated_word %></td>
       </tr>
     <% end %>
   </table>
